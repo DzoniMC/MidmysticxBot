@@ -128,21 +128,6 @@ bot.on('guildCreate', (guild) => {
 
 
 //-------------------------------------------------------------------------------------------------------------------------------------\\
-const distube = require('distube');
-bot.distube = new distube(bot, { searchSongs: false, emitNewSongOnly: true })
-bot.distube
-    .on('playSong', (message, queue, song) => message.channel.send(
-        `Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${song.user}`,
-    ))
-    .on('addSong', (message, queue, song) => message.channel.send(
-        `Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`,
-    ))
-    .on('error', (message, e) => {
-		//console.error(e)
-		message.channel.send(`An error encountered: ${e}`)
-	})
-
-//----------------------------------------------------------------------------------------------------------------------------------------\\
 const WelcomeSchema = require('./Schema/welcome-schema');
 
 bot.on("guildMemberAdd", async (member, guild) => {
