@@ -149,4 +149,4 @@ bot.on("guildMemberAdd", async (member) => {
     console.log(member.user.tag); 
 })
 
-bot.login(process.env.token);
+bot.login(token);
